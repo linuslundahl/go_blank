@@ -1,3 +1,6 @@
+/**
+ * Imports -------------------------------------------------------
+ */
 /* line 17, ../../../../../../../../usr/local/Cellar/ruby/1.9.3-p194/lib/ruby/gems/1.9.1/gems/compass-0.13.alpha.0/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -54,26 +57,37 @@ a img {
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block; }
 
-/*Tabs */
-/* line 2, ../sass/_core.scss */
+/** Example:
+@include font-face('font-name',
+         font-files(
+         'font-webfont.eot',
+         'font-webfont.ttf',
+         'font-webfont.woff',
+         'font-webfont.svg'),
+         'font-webfont.eot', normal, normal);
+*/
+/**
+ * Core styles ---------------------------------------------------
+ */
+/* line 5, ../sass/_core.scss */
 ul.tabs {
   *zoom: 1;
   border-bottom: 1px solid #dddddd;
   margin-left: 0;
   margin-bottom: 18px;
   list-style: none; }
-  /* line 9, ../sass/_core.scss */
+  /* line 12, ../sass/_core.scss */
   ul.tabs:before, ul.tabs:after {
     display: table;
     content: ""; }
-  /* line 13, ../sass/_core.scss */
+  /* line 16, ../sass/_core.scss */
   ul.tabs:after {
     clear: both; }
-  /* line 16, ../sass/_core.scss */
+  /* line 19, ../sass/_core.scss */
   ul.tabs > li {
     float: left;
     margin-bottom: -1px; }
-    /* line 19, ../sass/_core.scss */
+    /* line 22, ../sass/_core.scss */
     ul.tabs > li > a {
       -webkit-border-radius: 4px 4px 0 0;
       -moz-border-radius: 4px 4px 0 0;
@@ -85,12 +99,12 @@ ul.tabs {
       margin-right: 2px;
       line-height: 18px;
       border: 1px solid transparent; }
-      /* line 26, ../sass/_core.scss */
+      /* line 29, ../sass/_core.scss */
       ul.tabs > li > a:hover, ul.tabs > li > a:focus {
         background-color: #eeeeee;
         border-color: #eeeeee #eeeeee #dddddd;
         text-decoration: none; }
-  /* line 35, ../sass/_core.scss */
+  /* line 38, ../sass/_core.scss */
   ul.tabs > .active > a,
   ul.tabs > .active > a:hover, ul.tabs > .active a:focus {
     color: #555555;
@@ -99,4 +113,105 @@ ul.tabs {
     border-bottom-color: transparent;
     cursor: default; }
 
-/* End Tabs */
+/**
+ * Global styles -------------------------------------------------
+ */
+/* line 16, ../sass/screen.scss */
+body {
+  background: white;
+  color: #333333;
+  font: normal normal 1em/100% "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+/* line 22, ../sass/screen.scss */
+a {
+  color: #39687f;
+  text-decoration: none; }
+  /* line 26, ../sass/screen.scss */
+  a:visited {
+    color: #447c98; }
+  /* line 32, ../sass/screen.scss */
+  a:active, a:hover, a:focus {
+    color: #447c98; }
+
+/* line 37, ../sass/screen.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: 600;
+  margin: 1em 0; }
+
+/* line 43, ../sass/screen.scss */
+h1 {
+  font-size: 1.875em; }
+
+/* line 44, ../sass/screen.scss */
+h2 {
+  font-size: 1.625em; }
+
+/* line 45, ../sass/screen.scss */
+h3 {
+  font-size: 1.375em; }
+
+/* line 46, ../sass/screen.scss */
+h4 {
+  font-size: 1.125em; }
+
+/* line 47, ../sass/screen.scss */
+h5 {
+  font-size: 1.125em; }
+
+/* line 48, ../sass/screen.scss */
+h6 {
+  font-size: 1.125em; }
+
+/**
+ * Input styles --------------------------------------------------
+ */
+/* line 54, ../sass/screen.scss */
+textarea,
+input:not([type="submit"]):not([type="file"]) {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: #aaaaaa 1px 1px 3px 0 inset;
+  -moz-box-shadow: #aaaaaa 1px 1px 3px 0 inset;
+  box-shadow: #aaaaaa 1px 1px 3px 0 inset;
+  border: 1px solid #eee;
+  color: #666;
+  padding: 5px; }
+
+/* line 62, ../sass/screen.scss */
+input[type="submit"] {
+  background: #39687f;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #5ba6cb), color-stop(40%, #39687f), color-stop(100%, #39687f));
+  background-image: -webkit-linear-gradient(#5ba6cb, #39687f 40%, #39687f);
+  background-image: -moz-linear-gradient(#5ba6cb, #39687f 40%, #39687f);
+  background-image: -o-linear-gradient(#5ba6cb, #39687f 40%, #39687f);
+  background-image: -ms-linear-gradient(#5ba6cb, #39687f 40%, #39687f);
+  background-image: linear-gradient(#5ba6cb, #39687f 40%, #39687f);
+  -webkit-box-shadow: #72d0fe 0 1px 1px 0 inset;
+  -moz-box-shadow: #72d0fe 0 1px 1px 0 inset;
+  box-shadow: #72d0fe 0 1px 1px 0 inset;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #2f5669;
+  color: white;
+  font: normal normal 300 1em/150% "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0 10px 0 0;
+  padding: 5px 10px;
+  text-transform: uppercase; }
+
+/* line 69, ../sass/screen.scss */
+input::-webkit-input-placeholder,
+input:-moz-placeholder,
+textarea::-webkit-input-placeholder,
+textarea:-moz-placeholder {
+  color: #2d5365; }
+
+/* line 73, ../sass/screen.scss */
+input:focus {
+  outline: none; }

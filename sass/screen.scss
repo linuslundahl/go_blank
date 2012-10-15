@@ -1,7 +1,75 @@
 @charset "UTF-8";
 
+/**
+ * Imports -------------------------------------------------------
+ */
 // Compass imports
 @import "compass/reset", "compass/css3";
 
 // Theme imports
-@import "_core.scss";
+@import "_functions.scss", "_mixins.scss", "_variables.scss", "_fonts.scss", "_core.scss";
+
+
+/**
+ * Global styles -------------------------------------------------
+ */
+body {
+  background: $body_color;
+  color: $text_color;
+  font: normal normal #{calc-em($base_size, $base_size)}/100% $main_font;
+}
+
+a {
+  color: $link_color;
+  text-decoration: none;
+
+  &:visited {
+    color: $link_color * 1.2;
+  }
+
+  &:active,
+  &:hover,
+  &:focus {
+    color: $link_color * 1.2;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $headline_font;
+  font-weight: 600;
+  margin: 1em 0;
+}
+
+h1 { font-size: calc-em(30px, $base_size); }
+h2 { font-size: calc-em(26px, $base_size); }
+h3 { font-size: calc-em(22px, $base_size); }
+h4 { font-size: calc-em(18px, $base_size); }
+h5 { font-size: calc-em(18px, $base_size); }
+h6 { font-size: calc-em(18px, $base_size); }
+
+/**
+ * Input styles --------------------------------------------------
+ */
+textarea,
+input:not([type="submit"]):not([type="file"]) {
+  @include border-radius(3px);
+  @include box-shadow(#aaa 1px 1px 3px 0 inset);
+  border: 1px solid #eee;
+  color: #666;
+  padding: 5px;
+}
+
+input[type="submit"] {
+  @include button($link_color, #fff, $main_font);
+}
+
+input::-webkit-input-placeholder,
+input:-moz-placeholder,
+textarea::-webkit-input-placeholder,
+textarea:-moz-placeholder {
+  color: $link_color * 0.8;
+}
+
+input:focus {
+  outline: none;
+}
