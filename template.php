@@ -4,11 +4,20 @@
  *   Theme implementation functions for IM Glädjeshoppen.
  */
 
-// Add html meta here
-// $tags = array();
-// foreach ($tags as $key => $val) {
-//   drupal_add_html_head($val, $key);
-// }
+// Add html meta
+$tags = array(
+  'viewport' => array(
+    '#tag' => 'meta',
+    '#attributes' => array(
+      'name' => 'viewport',
+      'content' => 'width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1',
+    ),
+  ),
+);
+
+foreach ($tags as $key => $val) {
+  drupal_add_html_head($val, $key);
+}
 
 // Overriden theme functions from Drupal and contrib modules.
 include_once './' . drupal_get_path('theme', 'GO_BLANK') . '/functions/theme-overrides.inc';
