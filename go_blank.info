@@ -1,0 +1,31 @@
+name = Blank
+description = Blank starter theme
+screenshot = images/screenshot.png
+core = 7.x
+engine = phptemplate
+
+; Regions
+regions[header] = Header
+regions[content] = Content
+regions[footer] = Footer
+
+; Features
+features[] = logo
+features[] = name
+features[] = slogan
+features[] = node_user_picture
+features[] = comment_user_picture
+features[] = search
+features[] = favicon
+features[] = main_menu
+features[] = secondary_menu
+
+; Stylesheets
+stylesheets[all][] = stylesheets/screen.css
+stylesheets[print][] = stylesheets/print.css
+
+; Scripts
+scripts[] = javascripts/jquery.scripts.js
+
+; Settings
+; settings[key] = 0
