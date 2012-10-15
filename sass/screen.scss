@@ -1,3 +1,7 @@
 @charset "UTF-8";
 
-@import "compass/reset";
+// Compass imports
+@import "compass/reset", "compass/css3";
+
+// Theme imports
+@import "_core.scss";
