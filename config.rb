@@ -8,6 +8,19 @@ images_dir = "images"
 javascripts_dir = "javascripts"
 fonts_dir = "fonts"
 
+# pngquant sprites from directory sprites/images
+#
+# on_sprite_saved do |filename|
+#
+#   unless filename.match(/^sprite/)
+#
+#     %x{png8 #{filename}} # change from 'png8' to 'pngquant' if needed.
+#     %x{terminal-notifier -message "Your sprite is done: #{filename}"} # requires terminal-notifier
+#
+#   end
+#
+# end
+
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed
 output_style = :nested
