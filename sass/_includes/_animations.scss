@@ -1,0 +1,9 @@
+/** Example animation: (Requires Compass Alpha 4 [$ gem install compass --pre])
+@include keyframes(tinywiggle) {
+  25%,50%,75%,100% { @include transform-origin(top center); }
+  25%  { @include transform(rotate(4deg)); }
+  50%  { @include transform(rotate(-2deg)); }
+  75%  { @include transform(rotate(1deg)); }
+  100% { @include transform(rotate(0deg)); }
+}
+*/

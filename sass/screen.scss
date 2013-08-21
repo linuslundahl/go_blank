@@ -4,17 +4,36 @@
  * Imports -------------------------------------------------------
  */
 // Compass imports
-@import "compass/reset", "compass/css3";
+@import "compass/reset",
+        "compass/css3";
+
+// Extras
+@import "_functions.scss",
+        "_mixins.scss",
+        "_contrib/_hidpi.scss";
 
 // Theme imports
-@import "_functions.scss", "_mixins.scss", "_variables.scss", "_fonts.scss", "_core.scss";
+@import "_includes/_variables.scss",
+        "_includes/_fonts.scss",
+        "_includes/_animations.scss",
+        "_includes/_core.scss",
+        "_includes/_grid.scss";
 
 
 /**
  * Sprites -------------------------------------------------------
  */
-@import "sprite/*.png"
-+all-sprite-sprites
+// @import "sprite/*.png";
+// @include all-sprite-sprites;
+
+// --- Use the this for retina sprites ---
+
+// $sprites: sprite-map("sprite/*.png");
+// $sprites2x: sprite-map("sprite2x/*.png");
+
+// @each $file in (email, print, search) {
+//   %sprite-interpolation0__ { @include sprite-background(interpolation0__); }
+// }
 
 
 /**
@@ -23,7 +42,7 @@
 body {
   background: $body_color;
   color: $text_color;
-  font: normal normal #{calc-em($base_size, $base_size)}/100% $main_font;
+  font: normal normal #{em($base_size, 16px)}/100% $main_font;
 }
 
 a {
@@ -42,17 +61,30 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $headline_font;
+  margin: 1em 0;
   font-weight: 600;
+  font-family: $headline_font;
+}
+
+h1 { font-size: em(30px, $base_size); }
+h2 { font-size: em(26px, $base_size); }
+h3 { font-size: em(22px, $base_size); }
+h4 { font-size: em(18px, $base_size); }
+h5 { font-size: em(18px, $base_size); }
+h6 { font-size: em(18px, $base_size); }
+
+p, ul {
   margin: 1em 0;
 }
 
-h1 { font-size: calc-em(30px, $base_size); }
-h2 { font-size: calc-em(26px, $base_size); }
-h3 { font-size: calc-em(22px, $base_size); }
-h4 { font-size: calc-em(18px, $base_size); }
-h5 { font-size: calc-em(18px, $base_size); }
-h6 { font-size: calc-em(18px, $base_size); }
+i, em {
+  font-style: italic;
+}
+
+b, strong {
+  font-weight: 600;
+}
+
 
 /**
  * Input styles --------------------------------------------------
@@ -61,13 +93,15 @@ textarea,
 input:not([type="submit"]):not([type="file"]) {
   @include border-radius(3px);
   @include box-shadow(#aaa 1px 1px 3px 0 inset);
-  border: 1px solid #eee;
-  color: #666;
   padding: 5px;
+  border: 1px solid #EEE;
+  color: #666;
 }
 
 input[type="submit"] {
-  @include button($link_color, #fff, $main_font);
+  border: none;
+  background: $link_color;
+  color: $body_color;
 }
 
 input::-webkit-input-placeholder,

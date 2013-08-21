@@ -1,28 +1,19 @@
-// Creates a button style element
-@mixin button($bg, $color, $font_stack) {
-  background: $bg;
-  @include background-image(linear-gradient(($bg*1.6), $bg 40%, $bg));
-  @include box-shadow(($bg*2) 0 1px 1px 0 inset);
-  @include border-radius(5px);
-  border: 1px solid ($bg/1.2);
-  color: $color;
-  font: normal normal 300 1em/150% $font_stack;
-  margin: 0 10px 0 0;
-  padding: 5px 10px;
-  text-transform: uppercase;
+// Prefixes vendors
+@mixin vendor-prefix($name, $value) {
+  @each $vendor in ('', '-webkit-', '-moz-', '-ms-', '-o-','-kthtml-') {
+    #{$vendor}#{$name}: #{$value};
+  }
 }
 
-// max-width media query
-@mixin mq-max($type, $width) {
-  @media #{$type} and (max-width: $width) { @content; }
-}
+// Custom sprite mixin for retina sprites (requires hidpi)
+@mixin sprite-background($name) {
+  background-repeat: no-repeat;
+  background-image: sprite-url($sprites);
+  background-position: sprite-position($sprites, $name);
 
-// min-width media query
-@mixin mq-min($type, $width) {
-  @media #{$type} and (max-width: $width) { @content; }
-}
-
-// min-width and max-width media query
-@mixin mq-min-max($type, $min, $max) {
-  @media #{$type} and (min-width: #{$min}) and (max-width: #{$max}) { @content; }
+  @include hidpi {
+    background-image: sprite-url($sprites2x);
+    background-position: 0 round(nth(sprite-position($sprites2x, $name), 2) / 2);
+    @include background-size(ceil(image-width(sprite-path($sprites2x)) / 2) auto);
+  }
 }

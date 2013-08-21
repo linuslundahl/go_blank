@@ -1,3 +1,4 @@
-@function calc-em($target-px, $context) {
+// Calculates pixels to ems.
+@function em($target-px, $context) {
   @return ($target-px / $context) * 1em;
 }

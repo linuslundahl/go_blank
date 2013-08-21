@@ -1,4 +1,6 @@
 # Require any additional compass plugins here.
+# require 'susy' # http://susy.oddbird.net
+# require 'breakpoints' # http://breakpoint-sass.com
 
 # Set this to the root of your project when deployed:
 http_path = "/"
@@ -14,7 +16,12 @@ fonts_dir = "fonts"
 #
 #   unless filename.match(/^sprite/)
 #
-#     %x{png8 #{filename}} # change from 'png8' to 'pngquant' if needed.
+#     %x{png8 #{filename}}
+#
+#     # png8filename = filename.sub(/\.png/, '-fs8.png')
+#     # %x{compile/pngquant/pngquant #{filename}}
+#     # %x{mv -f #{png8filename} #{filename}}
+#
 #     %x{terminal-notifier -message "Your sprite is done: #{filename}"} # requires terminal-notifier
 #
 #   end
