@@ -133,7 +133,7 @@ normal, normal);
  * Sprites -------------------------------------------------------
  */
 /**
- * Global styles -------------------------------------------------
+ * Base styles -------------------------------------------------
  */
 /* line 42, ../sass/screen.scss */
 body {
@@ -153,51 +153,98 @@ a {
     color: #447c98; }
 
 /* line 63, ../sass/screen.scss */
-h1, h2, h3, h4, h5, h6 {
-  margin: 1em 0;
-  font-weight: 600;
-  font-family: Georgia, "Times New Roman", Times, serif; }
-
-/* line 69, ../sass/screen.scss */
 h1 {
-  font-size: 1.875em; }
+  font-size: 2em; }
+
+/* line 64, ../sass/screen.scss */
+h2 {
+  font-size: 1.5em; }
+
+/* line 65, ../sass/screen.scss */
+h3 {
+  font-size: 1.1875em; }
+
+/* line 66, ../sass/screen.scss */
+h4 {
+  font-size: 1em; }
+
+/* line 67, ../sass/screen.scss */
+h5 {
+  font-size: 0.875em; }
+
+/* line 68, ../sass/screen.scss */
+h6 {
+  font-size: 0.75em; }
 
 /* line 70, ../sass/screen.scss */
-h2 {
-  font-size: 1.625em; }
-
-/* line 71, ../sass/screen.scss */
-h3 {
-  font-size: 1.375em; }
-
-/* line 72, ../sass/screen.scss */
-h4 {
-  font-size: 1.125em; }
-
-/* line 73, ../sass/screen.scss */
-h5 {
-  font-size: 1.125em; }
-
-/* line 74, ../sass/screen.scss */
-h6 {
-  font-size: 1.125em; }
-
-/* line 76, ../sass/screen.scss */
-p, ul {
+h1, h2, h3 {
   margin: 1em 0; }
 
-/* line 80, ../sass/screen.scss */
-i, em {
-  font-style: italic; }
+/* line 74, ../sass/screen.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: 600; }
+
+/* line 79, ../sass/screen.scss */
+abbr, acronym {
+  border-bottom: 1px dotted #333333;
+  cursor: help; }
 
 /* line 84, ../sass/screen.scss */
-b, strong {
+strong, b {
   font-weight: 600; }
+
+/* line 88, ../sass/screen.scss */
+em, i {
+  font-style: italic; }
+
+/* line 92, ../sass/screen.scss */
+blockquote, ul, ol, dl {
+  margin: 1em; }
+
+/* line 96, ../sass/screen.scss */
+ol, ul, dl {
+  margin-left: 2em; }
+
+/* line 100, ../sass/screen.scss */
+ol li {
+  list-style: decimal outside; }
+
+/* line 104, ../sass/screen.scss */
+ul li {
+  list-style: disc outside; }
+
+/* line 108, ../sass/screen.scss */
+dl dd {
+  margin-left: 1em; }
+
+/* line 112, ../sass/screen.scss */
+th, td {
+  border: 1px solid #333333;
+  padding: 0.500em; }
+
+/* line 117, ../sass/screen.scss */
+th {
+  font-weight: 600;
+  text-align: center; }
+
+/* line 122, ../sass/screen.scss */
+caption {
+  margin-bottom: 0.500em;
+  text-align: center; }
+
+/* line 127, ../sass/screen.scss */
+p, fieldset, table {
+  margin-bottom: 1em; }
+
+/* line 131, ../sass/screen.scss */
+code, pre {
+  font-family: monospace; }
 
 /**
  * Input styles --------------------------------------------------
  */
-/* line 93, ../sass/screen.scss */
+/* line 140, ../sass/screen.scss */
 textarea,
 input:not([type="submit"]):not([type="file"]) {
   -webkit-border-radius: 3px;
@@ -210,19 +257,18 @@ input:not([type="submit"]):not([type="file"]) {
   border: 1px solid #EEE;
   color: #666; }
 
-/* line 101, ../sass/screen.scss */
+/* line 148, ../sass/screen.scss */
 input[type="submit"] {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
   border: none;
   background: #39687f;
   color: white; }
 
-/* line 110, ../sass/screen.scss */
-input::-webkit-input-placeholder,
-input:-moz-placeholder,
-textarea::-webkit-input-placeholder,
-textarea:-moz-placeholder {
+/* line 159, ../sass/screen.scss */
+textarea::-webkit-input-placeholder, textarea:-moz-placeholder, textarea::-moz-placeholder, textarea:-ms-input-placeholder, input::-webkit-input-placeholder, input:-moz-placeholder, input::-moz-placeholder, input:-ms-input-placeholder {
   color: #2d5365; }
-
-/* line 114, ../sass/screen.scss */
-input:focus {
+/* line 162, ../sass/screen.scss */
+textarea:focus, input:focus {
   outline: none; }

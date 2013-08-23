@@ -37,7 +37,7 @@
 
 
 /**
- * Global styles -------------------------------------------------
+ * Base styles -------------------------------------------------
  */
 body {
   background: $body_color;
@@ -60,29 +60,76 @@ a {
   }
 }
 
+h1 { font-size: em(32px, $base_size); }
+h2 { font-size: em(24px, $base_size); }
+h3 { font-size: em(19px, $base_size); }
+h4 { font-size: em(16px, $base_size); }
+h5 { font-size: em(14px, $base_size); }
+h6 { font-size: em(12px, $base_size); }
+
+h1, h2, h3 {
+  margin: 1em 0;
+}
+
 h1, h2, h3, h4, h5, h6 {
-  margin: 1em 0;
-  font-weight: 600;
   font-family: $headline_font;
+  font-weight: 600;
 }
 
-h1 { font-size: em(30px, $base_size); }
-h2 { font-size: em(26px, $base_size); }
-h3 { font-size: em(22px, $base_size); }
-h4 { font-size: em(18px, $base_size); }
-h5 { font-size: em(18px, $base_size); }
-h6 { font-size: em(18px, $base_size); }
-
-p, ul {
-  margin: 1em 0;
+abbr, acronym {
+  border-bottom: 1px dotted $text_color;
+  cursor: help;
 }
 
-i, em {
+strong, b {
+  font-weight: 600;
+}
+
+em, i {
   font-style: italic;
 }
 
-b, strong {
+blockquote, ul, ol, dl {
+  margin: 1em;
+}
+
+ol, ul, dl {
+  margin-left:2em;
+}
+
+ol li {
+  list-style: decimal outside;
+}
+
+ul li {
+  list-style: disc outside;
+}
+
+dl dd {
+  margin-left: 1em;
+}
+
+th, td {
+  border: 1px solid $text_color;
+  padding: 0.500em;
+}
+
+th {
   font-weight: 600;
+  text-align: center;
+}
+
+caption {
+  margin-bottom: 0.500em;
+  text-align: center;
+}
+
+p, fieldset, table {
+  margin-bottom: 1em;
+}
+
+code, pre {
+  font-family: monospace;
 }
 
 
@@ -99,18 +146,20 @@ input:not([type="submit"]):not([type="file"]) {
 }
 
 input[type="submit"] {
+  @include border-radius(3px);
   border: none;
   background: $link_color;
   color: $body_color;
 }
 
-input::-webkit-input-placeholder,
-input:-moz-placeholder,
-textarea::-webkit-input-placeholder,
-textarea:-moz-placeholder {
-  color: $link_color * 0.8;
-}
-
-input:focus {
-  outline: none;
+textarea, input {
+  &::-webkit-input-placeholder,
+  &:-moz-placeholder,
+  &::-moz-placeholder,
+  &:-ms-input-placeholder {
+    color: $link_color * 0.8;
+  }
+  &:focus {
+    outline: none;
+  }
 }
