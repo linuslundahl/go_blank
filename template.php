@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- *   Theme implementation functions for IM Glädjeshoppen.
+ *   Theme implementation functions.
  */
 
 // Add html meta
