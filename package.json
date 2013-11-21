@@ -1,0 +1,28 @@
+{
+  "name": "Blank",
+  "version": "1.0.0",
+  "description": "Blank starter theme",
+  "dependencies": {
+    "grunt-cli": "latest",
+    "grunt-contrib-concat": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-contrib-compass": "latest",
+    "grunt-notify": "latest"
+  },
+  "main": "Gruntfile.js",
+  "devDependencies": {
+    "grunt": "~0.4.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/linuslundahl/go_blank.git"
+  },
+  "author": "Linus Lundahl",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/linuslundahl/go_blank/issues"
+  },
+  "homepage": "https://github.com/linuslundahl/go_blank"
+}

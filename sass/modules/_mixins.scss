@@ -1,0 +1,69 @@
+/**
+ * Prefixes vendors.
+ * @param  {[type]} $name      [description]
+ * @param  {[type]} $value     [description]
+ * @return {[type]}            [description]
+ */
+@mixin vendor-prefix($name, $value) {
+  @each $vendor in ('', '-webkit-', '-moz-', '-ms-', '-o-','-kthtml-') {
+    #{$vendor}#{$name}: #{$value};
+  }
+}
+
+/**
+ * Custom sprite mixin for retina sprites (requires hidpi).
+ * @param  {[type]} $name      [description]
+ * @return {[type]}            [description]
+ */
+@mixin sprite-background($name) {
+  background-repeat: no-repeat;
+  background-image: sprite-url($sprites);
+  background-position: sprite-position($sprites, $name);
+
+  @include hidpi {
+    background-image: sprite-url($sprites2x);
+    background-position: 0 round(nth(sprite-position($sprites2x, $name), 2) / 2);
+    @include background-size(ceil(image-width(sprite-path($sprites2x)) / 2) auto);
+  }
+}
+
+/**
+ * Creates an arrow on an element.
+ * @param  {[type]} $dir       [description]
+ * @param  {[type]} $size      [description]
+ * @param  {[type]} $color     [description]
+ * @return {[type]}            [description]
+ */
+@mixin arrow($dir, $size, $color) {
+  &:after {
+    border: solid transparent;
+    border-width: $size;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+
+    @if ($dir == "top") {
+      border-bottom-color: $color;
+      bottom: 100%;
+      left: 50%;
+      margin-left: -#{$size};
+    } @else if ($dir == "bottom") {
+      border-top-color: $color;
+      top: 100%;
+      left: 50%;
+      margin-left: -#{$size};
+    } @else if ($dir == "left") {
+      border-right-color: $color;
+      top: 50%;
+      right: 100%;
+      margin-top: -#{$size};
+    } @else if ($dir == "right") {
+      border-left-color: $color;
+      top: 50%;
+      left: 100%;
+      margin-top: -#{$size};
+    }
+  }
+}

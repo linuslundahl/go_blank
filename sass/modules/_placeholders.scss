@@ -1,0 +1,23 @@
+$button_color: $main_color;
+
+%button {
+  background: $main_color;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: rem(13px, $base_size);
+  padding: #{rem(15px, 13px)} #{rem(25px, 13px)};
+  margin: 2px 0 4px 0;
+  text-transform: uppercase;
+
+  @include border-radius(10px);
+  @include box-shadow(darken($main_color, 15) 0 4px 0);
+  @include vendor-prefix('transition', 'background 50ms linear');
+
+  &:hover {
+    background: $main_color*1.1;
+    color: #fff;
+    margin: 4px 0 2px 0;
+    @include box-shadow(darken($main_color, 15) 0 2px 0);
+  }
+}

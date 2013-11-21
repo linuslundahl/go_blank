@@ -1,0 +1,9 @@
+/**
+ * Calculates pixels to ems.
+ * @param  {[type]} $target-px [description]
+ * @param  {[type]} $context   [description]
+ * @return {[type]}            [description]
+ */
+@function em($target-px, $context, $type: em) {
+  @return ($target-px / $context) * 1#{$type};
+}

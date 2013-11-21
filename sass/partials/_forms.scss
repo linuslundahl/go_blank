@@ -1,0 +1,47 @@
+label {
+  font-size: rem(20px, $base_size);
+  font-weight: 600;
+  margin: 0;
+}
+
+.form-item, .form-actions {
+  margin: 1.500rem 0;
+}
+
+.description {
+  font-size: rem(14px, $base_size);
+  font-style: italic;
+  margin: 0.250rem 0 0 0;
+}
+
+.form-text,
+.form-textarea {
+  font-size: rem(16px, $base_size);
+  margin: 0.250rem 0;
+  padding: #{rem(15px, 16px)} #{rem(15px, 16px)};
+  border: 1px solid $main_color;
+  color: #666;
+  width: 90%;
+
+  @include border-radius(10px);
+  @include box-shadow(desaturate(darken($main_color, 35), 25) 0 4px 0);
+  @include vendor-prefix('transition', 'all 100ms ease-in-out');
+}
+
+.form-submit {
+  @extend %button;
+
+  border: none;
+}
+
+textarea, input {
+  &::-webkit-input-placeholder,
+  &:-moz-placeholder,
+  &::-moz-placeholder,
+  &:-ms-input-placeholder {
+    color: $main_color * 0.8;
+  }
+  &:focus {
+    outline: none;
+  }
+}
