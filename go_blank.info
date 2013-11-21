@@ -1,5 +1,5 @@
-name = Blank
-description = Blank starter theme
+name = GO_BLANK
+description = GO_BLANK theme
 screenshot = images/screenshot.png
 core = 7.x
 version = 7.x-1.0

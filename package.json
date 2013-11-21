@@ -1,7 +1,7 @@
 {
-  "name": "Blank",
+  "name": "GO_BLANK",
   "version": "1.0.0",
-  "description": "Blank starter theme",
+  "description": "GO_BLANK theme",
   "dependencies": {
     "grunt-cli": "latest",
     "grunt-contrib-concat": "latest",
