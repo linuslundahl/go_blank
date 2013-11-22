@@ -1,16 +1,35 @@
 #!/usr/bin/env bash
+
 NAME=$1
-mv go_blank.info $NAME.info
-perl -pi -w -e 's/GO_BLANK/'$NAME'/g;' *.php
-perl -pi -w -e 's/GO_BLANK/'$NAME'/g;' *.info
-perl -pi -w -e 's/GO_BLANK/'$NAME'/g;' *.json
-perl -pi -w -e 's/GO_BLANK/'$NAME'/g;' javascripts/*.js
-rm install.sh
-rm README.md
-rm images/sprite/README.md
-rm fonts/README.md
-rm -rf .git
-git init
-git add .
-git commit -m "Initial commit."
-echo "New theme named $NAME created."
+
+if [ $NAME ]
+then
+
+  # Change filenames
+  mv go_blank.info $NAME.info
+  mv javascripts/custom/go_blank.js javascripts/custom/$NAME.js
+
+  # Renaming in files
+  for i in "*.php" "*.info" "*.json" "javascripts/*.js" "javascripts/custom/*.js"
+  do :
+    perl -pi -w -e 's/GO_BLANK/'$NAME'/g;' $i
+  done
+
+  # Remove files
+  for i in "install.sh" "README.md" "fonts/README.md" "images/sprite/README.md" "javascripts/vendor/README.md"
+  do :
+    rm $i
+  done
+
+  # Setup Git
+  rm -rf .git
+  git init
+  git add .
+  git commit -m "Initial commit."
+
+
+  # Completed
+  echo -e "\n\nNew theme named $NAME created.\n"
+  echo -e "Don't forget to rename the theme folder to $NAME.\n"
+
+fi

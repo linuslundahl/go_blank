@@ -5,11 +5,11 @@
 http_path = "/"
 css_dir = "stylesheets"
 sass_dir = "sass"
-images_dir = "images"
+images_dir = "images/src"
 javascripts_dir = "javascripts"
 fonts_dir = "fonts"
 
-# pngquant sprites from directory sprites/images
+# pngquant auto generated sprites
 #
 # on_sprite_saved do |filename|
 #

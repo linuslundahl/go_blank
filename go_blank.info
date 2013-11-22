@@ -20,6 +20,7 @@ features[] = search
 features[] = favicon
 features[] = main_menu
 features[] = secondary_menu
+features[] = respondjs
 
 ; Stylesheets
 stylesheets[all][] = stylesheets/screen.css

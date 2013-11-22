@@ -1,11 +1,12 @@
 module.exports = function (grunt) {
 
   grunt.registerTask('watch', [ 'watch' ]);
+  grunt.registerTask('imageNotify', 'imageoptim');
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     jshint: {
-      files: ['Gruntfile.js', 'javascripts/scripts.js'],
+      files: ['Gruntfile.js', 'javascripts/custom/*.js'],
       options: {
         // laxcomma: true,
         globals: {
@@ -28,8 +29,8 @@ module.exports = function (grunt) {
         options: {
           separator: ';'
         },
-        src: ['javascripts/jquery.scripts.js'],
-        dest: 'javascripts/jquery.scripts.min.js'
+        src: ['javascripts/custom/*.js'],
+        dest: 'javascripts/scripts.js'
       },
     },
     uglify: {
@@ -39,8 +40,21 @@ module.exports = function (grunt) {
       },
       dist: {
         files: {
-          'javascripts/jquery.scripts.min.js': ['javascripts/jquery.scripts.min.js']
+          'javascripts/scripts.min.js': ['javascripts/scripts.min.js']
         }
+      }
+    },
+    imagemin: {
+      options: {
+        pngquant: true
+      },
+      dist: {
+        files: [{
+          expand: true,
+          cwd: 'images/src/',
+          src: ['**/*.{png,jpg,gif}'],
+          dest: 'images/dist/'
+        }]
       }
     },
     watch: {
@@ -52,13 +66,18 @@ module.exports = function (grunt) {
         tasks: ['compass:dist']
       },
       js: {
-        files: ['javascripts/jquery.scripts.js'],
+        files: ['javascripts/custom/*.js'],
         tasks: ['jshint', 'concat:dist', 'uglify:dist']
+      },
+      images: {
+        files: ['images/*.*'],
+        tasks: ['imagemin:dist']
       }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-compass');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-notify');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');

@@ -4,12 +4,13 @@
   "description": "GO_BLANK theme",
   "dependencies": {
     "grunt-cli": "latest",
+    "grunt-notify": "latest",
+    "grunt-contrib-imagemin": "latest",
+    "grunt-contrib-compass": "latest",
     "grunt-contrib-concat": "latest",
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-jshint": "latest",
-    "grunt-contrib-watch": "latest",
-    "grunt-contrib-compass": "latest",
-    "grunt-notify": "latest"
+    "grunt-contrib-watch": "latest"
   },
   "main": "Gruntfile.js",
   "devDependencies": {
