@@ -16,7 +16,7 @@ then
   done
 
   # Remove files
-  for i in "install.sh" "README.md" "fonts/README.md" "images/dist/sprite/README.md" "images/src/sprite/README.md" "javascripts/vendor/README.md"
+  for i in "install.sh" "README.md" "fonts/README.md" "images/dist/sprite/README.md" "images/src/sprite/README.md" "javascripts/vendor/README.md" "templates/contrib/README.md"
   do :
     rm $i
   done
