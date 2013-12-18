@@ -40,7 +40,7 @@ module.exports = function (grunt) {
       },
       dist: {
         files: {
-          'javascripts/scripts.min.js': ['javascripts/scripts.min.js']
+          'javascripts/scripts.min.js': ['javascripts/scripts.js']
         }
       }
     },

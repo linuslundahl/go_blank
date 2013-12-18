@@ -27,7 +27,7 @@ stylesheets[all][] = stylesheets/screen.css
 stylesheets[print][] = stylesheets/print.css
 
 ; Scripts
-; scripts[] = javascripts/jquery.scripts.js
+; scripts[] = javascripts/scripts.min.js
 
 ; Settings
 ; settings[key] = 0
