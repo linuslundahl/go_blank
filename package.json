@@ -10,11 +10,18 @@
     "grunt-contrib-concat": "latest",
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-jshint": "latest",
-    "grunt-contrib-watch": "latest"
+    "grunt-contrib-watch": "latest",
+    "gulp-sass": "latest",
+    "gulp-imagemin": "latest",
+    "gulp-jshint": "latest",
+    "gulp-uglify": "latest",
+    "gulp-watch": "latest"
   },
   "main": "Gruntfile.js",
   "devDependencies": {
-    "grunt": "~0.4.1"
+    "grunt": "~0.4.1",
+    "gulp": "~3.3.4",
+    "gulp-util": "~2.2.10"
   },
   "repository": {
     "type": "git",
